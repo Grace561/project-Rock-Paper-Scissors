@@ -1,0 +1,7 @@
+console.log("Welcome"); 
+
+function getComputerChoice() {
+    const choices = ["rock", "paper","Scissors"];
+    const randomndex = Math.floor(Math.random() * choices.length);
+    return choices [randomindex]
+}
