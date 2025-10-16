@@ -1,3 +1,39 @@
+const container = document.querySelector("#container");
+
+const content = document.createElement("div");
+content.classList.add("content");
+content.textContent = "click your choice!";
+
+container.appendChild(content);
+
+const rockButton = document.createElement('button');
+rockButton.textContent = 'Rock';
+// rockButton.id = 'rockBtn';
+rockButton.addEventListener('click',function(){
+  playRound(humanChoice,computerChoice)
+});
+
+container.appendChild(rockButton);
+
+const paperButton = document.createElement('button');
+paperButton.textContent = 'paper';
+// paperButton.id = 'paperBtn';
+paperButton.addEventListener('click',function(){
+  playRound(humanChoice,computerChoice)
+});
+
+container.appendChild(paperButton);
+
+const scissorsButton = document.createElement('button');
+scissorsButton.textContent = 'Scissors';
+// scissorsButton.id = 'paperBtn';
+scissorsButton.addEventListener('click',function(){
+  playRound(humanChoice,computerChoice)
+});
+
+container.appendChild(scissorsButton);
+
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -9,12 +45,11 @@ function getComputerChoice(){
 console.log(getComputerChoice());
 
 
-
-
 function getHumanChoice(){
   const HumanChoice = prompt("Enter your choice (Rock, Paper, Scissors)");
   return HumanChoice.toLocaleLowerCase(); 
 }
+// console.log(getHumanChoice())
 
 
 
@@ -56,18 +91,21 @@ function playRound(humanChoice, computerChoice){
     (computerChoice === "paper" && humanChoice === "scissors"){
       console.log("You lose")
     }
+     
 }
+
+
 
 function playGame(){
 
 
-  for (let i = 0; i < 5; i++) {
-      const humanSelection = getHumanChoice();
-      const computerSelection = getComputerChoice();
-      console.log(`Round ${i + 1}:`);
-      console.log(`Player chose: ${humanSelection}`);
-      console.log(`Computer chose: ${computerSelection}`);
-      playRound(humanSelection, computerSelection);
+  // for (let i = 0; i < 5; i++) {
+      // const humanSelection = getHumanChoice();
+      // const computerSelection = getComputerChoice();
+      // console.log(`Round ${i + 1}:`);
+      // console.log(`Player chose: ${humanSelection}`);
+      // console.log(`Computer chose: ${computerSelection}`);
+      // playRound(humanSelection, computerSelection);
       console.log(`Current Score: Player ${humanScore} - Computer ${computerScore}`);
   }
 
@@ -79,5 +117,5 @@ function playGame(){
     } else {
       console.log("The game is a tie!");
   }
-}
+
 playGame();
