@@ -49,3 +49,7 @@ btn.addEventListener("click", function (e) {
   console.log(e);
 });
 
+// Add a div that display the results
+// change all the console.log into dom methods
+// display the running score 
+// announce a winner of the game once one player reaches 5 points. 
